@@ -1,10 +1,10 @@
 # Aniface
 
-[![npm version](https://img.shields.io/npm/v/aniface.svg)](https://www.npmjs.com/package/aniface)
-[![npm downloads](https://img.shields.io/npm/dm/aniface.svg)](https://www.npmjs.com/package/aniface)
-[![license](https://img.shields.io/npm/l/aniface.svg)](https://github.com/alysachan830/aniface/blob/main/LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.npmjs.com/package/aniface)
-[![Live Demo](https://img.shields.io/badge/demo-live-success.svg)](https://alysachan830.github.io/aniface/)
+[!\[npm version](https://img.shields.io/npm/v/aniface.svg)](https://www.npmjs.com/package/aniface)
+[!\[npm downloads](https://img.shields.io/npm/dm/aniface.svg)](https://www.npmjs.com/package/aniface)
+[!\[license](https://img.shields.io/npm/l/aniface.svg)](https://github.com/alysachan830/aniface/blob/main/LICENSE)
+[!\[TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.npmjs.com/package/aniface)
+[!\[Live Demo](https://img.shields.io/badge/demo-live-success.svg)](https://alysachan830.github.io/aniface/)
 
 [🎭 **Try Live Demo**](https://alysachan830.github.io/aniface/) | [📦 **npm Package**](https://www.npmjs.com/package/aniface)
 
@@ -14,20 +14,25 @@ A powerful, easy-to-use library that brings your 3D avatar models to life with r
 
 ## Features
 
-- 🎭 **Real-time facial tracking** - Powered by MediaPipe Face Landmarker
-- 🎨 **Automatic blendshape mapping** - Works with ARKit-compatible models
-- 🎯 **Simple API** - Get started in minutes
-- 🔌 **Flexible input modes** - Built-in detection, custom sources, or direct data push
-- 🎮 **Multiple rigging systems** - Support for Ready Player Me, QuickRig, and custom models
-- 🔧 **Highly customizable** - Fine-tune every aspect of rendering and tracking
-- 📦 **TypeScript support** - Full type definitions included
-- ⚡ **Performance optimized** - Efficient rendering and blendshape updates
+* 🎭 **Real-time facial tracking** - Powered by MediaPipe Face Landmarker
+* 🎨 **Automatic blendshape mapping** - Works with ARKit-compatible models
+* 🎯 **Simple API** - Get started in minutes
+* 🔌 **Flexible input modes** - Built-in detection, custom sources, or direct data push
+* 🎮 **Multiple rigging systems** - Support for Ready Player Me, QuickRig, and custom models
+* 🔧 **Highly customizable** - Fine-tune every aspect of rendering and tracking
+* 📦 **TypeScript support** - Full type definitions included
+* ⚡ **Performance optimized** - Efficient rendering and blendshape updates
+* 🎙️ **Real-time & history subtitles** - Speech recognition (Web Speech API, zh-CN) with continuous live captions and a timestamped subtitle history (up to 50 entries)
+* 🔊 **Voice reply (TTS)** - Automatic Chinese speech synthesis via browser TTS, toggleable with the "Enable Voice Reply" switch
+* 🎬 **Video file input** - Upload a local video and drive the avatar from the video frames in real time
+
 
 
 <div>
   <img src="https://github.com/user-attachments/assets/285cfeae-8fe8-45ca-afc4-dbafe6fa1cf7" alt="Raccoon Demo" width="45%" />
   <img src="https://github.com/user-attachments/assets/ce9e72a0-ef45-487d-aca2-fccd319456b2" alt="RPM Demo" width="45%" />
 </div>
+
 
 
 ## Installation
@@ -67,7 +72,7 @@ avatar.destroy()
 
 Aniface supports two input modes:
 
-### 1. Built-in MediaPipe Detection (Default)
+### 1\. Built-in MediaPipe Detection (Default)
 
 The standard way - provide a video element and Aniface handles everything:
 
@@ -81,7 +86,7 @@ await avatar.initialize()
 avatar.start() // Automatic processing loop
 ```
 
-### 2. Custom MediaPipe Configuration
+### 2\. Custom MediaPipe Configuration
 
 Use your own MediaPipe Face Landmarker instance with custom settings:
 
@@ -113,12 +118,12 @@ animate()
 
 ### Use Cases for Custom MediaPipe
 
-- **Custom detection thresholds**: Fine-tune confidence levels for your specific use case
-- **Performance optimization**: Adjust settings for better FPS on lower-end devices
-- **Custom delegates**: Use GPU acceleration or WebAssembly optimizations
-- **Multiple faces**: Process multiple faces from the same video stream
-- **Data processing**: Apply custom filters or transformations before rendering
-- **Integration**: Combine with other MediaPipe tasks (hand tracking, pose detection)
+* **Custom detection thresholds**: Fine-tune confidence levels for your specific use case
+* **Performance optimization**: Adjust settings for better FPS on lower-end devices
+* **Custom delegates**: Use GPU acceleration or WebAssembly optimizations
+* **Multiple faces**: Process multiple faces from the same video stream
+* **Data processing**: Apply custom filters or transformations before rendering
+* **Integration**: Combine with other MediaPipe tasks (hand tracking, pose detection)
 
 ## Configuration Options
 
@@ -151,7 +156,7 @@ new Aniface({
 const avatar = new Aniface({
   videoElement,
   canvasElement,
-  modelPath: './raccoon_head_small.glb',
+  modelPath: './raccoon\_head\_small.glb',
   
   cameraConfig: {
     fov: 60,
@@ -185,7 +190,7 @@ avatar.start()
 const avatar = new Aniface({
   videoElement,
   canvasElement,
-  modelPath: 'https://models.readyplayer.me/[YOUR_ID].glb?morphTargets=ARKit&useHands=false',
+  modelPath: 'https://models.readyplayer.me/\[YOUR\_ID].glb?morphTargets=ARKit\&useHands=false',
   
   cameraConfig: {
     fov: 60,
@@ -207,7 +212,7 @@ const avatar = new Aniface({
   lightingConfig: {
     ambientIntensity: 1.2,
     directionalIntensity: 1.5,
-    directionalPosition: [2, 3, 3]
+    directionalPosition: \[2, 3, 3]
   },
   
   modelOptions: {
@@ -234,12 +239,12 @@ Different 3D models use different coordinate systems for bone rotations. Use `ax
 const avatar = new Aniface({
   videoElement,
   canvasElement,
-  modelPath: './quickrig_avatar.glb',
+  modelPath: './quickrig\_avatar.glb',
   
   cameraConfig: {
     fov: 60,
-    position: [0, 1.65, 1.2],
-    target: [0, 1.6, 0]
+    position: \[0, 1.65, 1.2],
+    target: \[0, 1.6, 0]
   },
   
   modelOptions: {
@@ -247,7 +252,7 @@ const avatar = new Aniface({
     center: true,
     autoRotate: false,
     rotation: 0,
-    position: [0, -0.5, 0],
+    position: \[0, -0.5, 0],
     fullBodyAvatar: true,
     axisMapping: 'quickrig'  // Specify QuickRig coordinate system
   },
@@ -267,12 +272,15 @@ avatar.start()
 ```
 
 **Available axis mappings:**
-- `'standard'` (default): For Ready Player Me and most manually rigged models
-- `'quickrig'`: For QuickRig rigged models
+
+* `'standard'` (default): For Ready Player Me and most manually rigged models
+* `'quickrig'`: For QuickRig rigged models
 
 **How to know which to use:**
-- If your avatar looks in wrong directions when you move your head, try switching the `axisMapping`
-- Check your model's bone naming (e.g., `QuickRigCharacter_Head` suggests `'quickrig'`)
+
+* If your avatar looks in wrong directions when you move your head, try switching the `axisMapping`
+* Check your model's bone naming (e.g., `QuickRigCharacter\_Head` suggests `'quickrig'`)
+
 
 
 ## Advanced Configuration Examples
@@ -298,7 +306,7 @@ const avatar = new Aniface({
 })
 ```
 
-### Camera & Lighting
+### Camera \& Lighting
 
 ```javascript
 const avatar = new Aniface({
@@ -309,8 +317,8 @@ const avatar = new Aniface({
   // Camera settings
   cameraConfig: {
     fov: 60,                            // Field of view
-    position: [0, 1.65, 1.2],          // Camera position [x, y, z] (default: [0, 0, 1.5])
-    target: [0, 1.6, 0],               // Camera lookAt target [x, y, z] (default: [0, 0, 0])
+    position: \[0, 1.65, 1.2],          // Camera position \[x, y, z] (default: \[0, 0, 1.5])
+    target: \[0, 1.6, 0],               // Camera lookAt target \[x, y, z] (default: \[0, 0, 0])
     enableControls: true,               // Orbit controls
     enableZoom: false                   // Disable zoom
   },
@@ -319,7 +327,7 @@ const avatar = new Aniface({
   lightingConfig: {
     ambientIntensity: 0.6,              // Ambient light intensity
     directionalIntensity: 0.9,          // Main light intensity
-    directionalPosition: [5, 5, 5]      // Light position
+    directionalPosition: \[5, 5, 5]      // Light position
   }
 })
 ```
@@ -339,7 +347,7 @@ const avatar = new Aniface({
     center: true,                       // Center model at origin
     autoRotate: true,                   // Apply automatic Y rotation
     rotation: Math.PI,                  // Rotation in radians (default: 180°)
-    position: [0, -0.5, 0],            // Position offset [x, y, z]
+    position: \[0, -0.5, 0],            // Position offset \[x, y, z]
     fullBodyAvatar: true,               // Enable for full-body models (vs head-only)
     axisMapping: 'standard'             // Rigging system: 'standard' or 'quickrig'
   }
@@ -347,8 +355,9 @@ const avatar = new Aniface({
 ```
 
 **Axis Mapping Options:**
-- `'standard'`: Ready Player Me, most manual rigs (default)
-- `'quickrig'`: QuickRig rigged models
+
+* `'standard'`: Ready Player Me, most manual rigs (default)
+* `'quickrig'`: QuickRig rigged models
 
 💡 **Tip:** If your avatar moves in wrong directions, try changing `axisMapping`.
 
@@ -371,9 +380,10 @@ const avatar = new Aniface({
 ```
 
 **Configuration tips:**
-- Lower confidence values = more sensitive detection but may be less stable
-- Higher confidence values = more stable but may miss subtle movements
-- WASM files load from CDN automatically - no `wasmPath` needed unless self-hosting
+
+* Lower confidence values = more sensitive detection but may be less stable
+* Higher confidence values = more stable but may miss subtle movements
+* WASM files load from CDN automatically - no `wasmPath` needed unless self-hosting
 
 ## Model Requirements
 
@@ -387,18 +397,19 @@ Your 3D model must have:
 
 Aniface supports multiple rigging conventions:
 
-- **Ready Player Me** - Use default settings or `axisMapping: 'standard'`
-- **QuickRig** - Use `axisMapping: 'quickrig'`
-- **Custom models** - Try `'standard'` first, switch to `'quickrig'` if movements are incorrect
+* **Ready Player Me** - Use default settings or `axisMapping: 'standard'`
+* **QuickRig** - Use `axisMapping: 'quickrig'`
+* **Custom models** - Try `'standard'` first, switch to `'quickrig'` if movements are incorrect
 
 ### Common Blendshape Names
 
 Aniface maps MediaPipe blendshapes to these standard names:
-- `eyeBlinkLeft`, `eyeBlinkRight`
-- `jawOpen`, `jawLeft`, `jawRight`
-- `mouthSmileLeft`, `mouthSmileRight`
-- `browInnerUp`, `browOuterUpLeft`, `browOuterUpRight`
-- And many more... (52 total)
+
+* `eyeBlinkLeft`, `eyeBlinkRight`
+* `jawOpen`, `jawLeft`, `jawRight`
+* `mouthSmileLeft`, `mouthSmileRight`
+* `browInnerUp`, `browOuterUpLeft`, `browOuterUpRight`
+* And many more... (52 total)
 
 ## API Reference
 
@@ -432,3 +443,58 @@ avatar.ready: boolean
 ## License
 
 MIT - see [LICENSE](LICENSE) file for details
+
+## Core Configuration Items
+
+
+
+blendshapeMultipliers: Fine-tune the intensity of individual expressions such as blinking, mouth opening and smiling
+
+cameraConfig: Set field of view, position, orbit control and zoom function
+
+lightingConfig: Adjust ambient light and directional light intensity and position
+
+modelOptions: Control model scaling, centering, rotation and rigging axis mapping
+
+landmarkConfig: Adjust face detection confidence and tracking sensitivity
+
+## How to Run This Project
+
+
+
+1\. Install dependencies:
+
+npm install
+
+2\. Start local development server:
+
+npm run dev
+
+3\. Build for production:
+
+npm run build
+
+Note： Speech recognition and TTS functions rely on browser native API. It is recommended to use Chrome browser for the best experience. Camera and microphone permissions need to be enabled when running.
+
+## Project Demo
+
+
+
+\[Click to view full demo video](%E5%90%8E%E7%BB%AD%E5%A1%AB%E5%85%A5%E4%BD%A0%E7%9A%84%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91%E5%85%AC%E5%BC%80%E9%93%BE%E6%8E%A5)
+
+### Demo Usage
+
+1. **Video Stream (default)** - Select the "Video Stream" tab and allow camera access to drive the avatar with your webcam.
+2. **Manual Input** - Select the "Manual Input" tab to use your own MediaPipe Face Landmarker instance with `processLandmarkData()`.
+3. **Video File** - Select the "Video File" tab to upload a local video; its frames are used as real-time facial tracking input for the avatar.
+4. **Subtitles** - While speaking, speech is recognized continuously (zh-CN) and shown as live captions; each final sentence is saved to the timestamped Subtitle History list (up to 50 entries).
+5. **Voice Reply** - Tick the "Enable Voice Reply" checkbox to have each recognized sentence read aloud automatically in Chinese via the browser's TTS engine. Untick it to mute the voice reply.
+
+## Author
+
+Xilin Guo
+
+Bachelor of Computer Science and Technology
+
+Nanjing Agricultural University
+
