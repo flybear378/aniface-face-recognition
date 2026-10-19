@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Override to enable output
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    
+    // Output settings
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Proper ESM support for Node.js
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "examples",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+}
+
