@@ -476,12 +476,6 @@ npm run build
 
 Note： Speech recognition and TTS functions rely on browser native API. It is recommended to use Chrome browser for the best experience. Camera and microphone permissions need to be enabled when running.
 
-## Project Demo
-
-
-
-\[Click to view full demo video](%E5%90%8E%E7%BB%AD%E5%A1%AB%E5%85%A5%E4%BD%A0%E7%9A%84%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91%E5%85%AC%E5%BC%80%E9%93%BE%E6%8E%A5)
-
 ### Demo Usage
 
 1. **Video Stream (default)** - Select the "Video Stream" tab and allow camera access to drive the avatar with your webcam.
