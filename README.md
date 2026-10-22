@@ -2,11 +2,25 @@
 
 [!\[npm version](https://img.shields.io/npm/v/aniface.svg)](https://www.npmjs.com/package/aniface)
 [!\[npm downloads](https://img.shields.io/npm/dm/aniface.svg)](https://www.npmjs.com/package/aniface)
-[!\[license](https://img.shields.io/npm/l/aniface.svg)](https://github.com/alysachan830/aniface/blob/main/LICENSE)
+[!\[license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flybear378/aniface-face-recognition/blob/main/LICENSE)
 [!\[TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.npmjs.com/package/aniface)
-[!\[Live Demo](https://img.shields.io/badge/demo-live-success.svg)](https://alysachan830.github.io/aniface/)
+[!\[Live Demo](https://img.shields.io/badge/demo-live-success.svg)](https://flybear378.github.io/aniface-face-recognition/)
 
-[🎭 **Try Live Demo**](https://alysachan830.github.io/aniface/) | [📦 **npm Package**](https://www.npmjs.com/package/aniface)
+[🎭 **Try Live Demo**](https://flybear378.github.io/aniface-face-recognition/) | [📦 **npm Package**](https://www.npmjs.com/package/aniface)
+
+<!-- 提示：badge 与 Live Demo 链接已更新为本人账号链接；npm 徽章仍指向原作者的 npm 包（aniface 库本身未发布新版本） -->
+> 🚀 **What's New in This Fork / 本分支新增功能**
+
+This project is a fork of [alysachan830/aniface](https://github.com/alysachan830/aniface). On top of the original real-time facial tracking capabilities, this fork adds the following new features:
+
+| 功能 | 技术方案 | 设计原则 |
+| --- | --- | --- |
+| 实时字幕（Real-time Subtitles） | Web Speech API（zh-CN）连续语音识别，实时显示字幕 | 通过原有 input modes 扩展实现，不改动核心渲染与追踪管线 |
+| 字幕历史（Subtitle History） | 每条最终识别结果带时间戳，最多保留 50 条 | 纯增量数据展示，原 API 向后兼容 |
+| 语音朗读（Voice Reply / TTS） | 浏览器原生 TTS 引擎朗读中文，可通过 "Enable Voice Reply" 开关控制 | 可开关设计，不影响默认行为 |
+| 视频文件输入驱动（Video File Input） | 上传本地视频文件，将其帧作为人脸追踪输入驱动头像 | 复用现有 input modes 扩展点，不改动核心渲染与追踪管线 |
+
+All additions are implemented through the existing input modes extension, without touching the core rendering / tracking pipeline, and the original API remains backward-compatible.
 
 **Animate 3D avatars with real-time facial tracking using MediaPipe and Three.js**
 
@@ -22,9 +36,9 @@ A powerful, easy-to-use library that brings your 3D avatar models to life with r
 * 🔧 **Highly customizable** - Fine-tune every aspect of rendering and tracking
 * 📦 **TypeScript support** - Full type definitions included
 * ⚡ **Performance optimized** - Efficient rendering and blendshape updates
-* 🎙️ **Real-time & history subtitles** - Speech recognition (Web Speech API, zh-CN) with continuous live captions and a timestamped subtitle history (up to 50 entries)
-* 🔊 **Voice reply (TTS)** - Automatic Chinese speech synthesis via browser TTS, toggleable with the "Enable Voice Reply" switch
-* 🎬 **Video file input** - Upload a local video and drive the avatar from the video frames in real time
+* ✨ **Real-time & history subtitles** - Speech recognition (Web Speech API, zh-CN) with continuous live captions and a timestamped subtitle history (up to 50 entries) *(fork addition)*
+* ✨ **Voice reply (TTS)** - Automatic Chinese speech synthesis via browser TTS, toggleable with the "Enable Voice Reply" switch *(fork addition)*
+* ✨ **Video file input** - Upload a local video and drive the avatar from the video frames in real time *(fork addition)*
 
 
 
@@ -491,4 +505,6 @@ Xilin Guo
 Bachelor of Computer Science and Technology
 
 Nanjing Agricultural University
+
+主要贡献：在 aniface 基础上新增字幕、TTS 与视频输入驱动功能
 
